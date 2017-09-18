@@ -1,0 +1,570 @@
+// Creation of test variable
+    VariableNode * TestVariableNode;
+    AddressSpace_CreateVariableNode(GlobalAddressSpaceHandle, &TestVariableNode, NULL);
+    TestVariableNode->BaseAttribute.BrowseName = "TestVar";
+    TestVariableNode->BaseAttribute.DisplayName = "TestVar";
+    TestVariableNode->BaseAttribute.NoOfReferences = 0;
+    TestVariableNode->BaseAttribute.NodeId.NamespaceIndex = 10;
+    TestVariableNode->BaseAttribute.NodeId.Identifier.Numeric = 1;
+    TestVariableNode->BaseAttribute.NodeId.IdentifierType = OpcUa_IdType_Numeric;
+    TestVariableNode->BaseAttribute.WriteMask = 4194303;
+    TestVariableNode->AccessLevel = 3;
+    TestVariableNode->UserAccessLevel = 3;
+    TestVariableNode->ValueRank = -1;
+    TestVariableNode->ArrayDimensions = malloc(sizeof(OpcUa_UInt32) * 1);
+    TestVariableNode->ArrayDimensions[0] = 3;
+    TestVariableNode->DataType.Identifier.Numeric = OpcUaId_StatusResult;
+    TestVariableNode->DataType.NamespaceIndex = 0;
+    TestVariableNode->DataType.IdentifierType = OpcUa_IdType_Numeric;
+    TestVariableNode->Value.ArrayType = OpcUa_VariantArrayType_Scalar;
+    TestVariableNode->Value.Datatype = OpcUaType_ExtensionObject;
+    TestVariableNode->Value.Value.ExtensionObject = malloc(sizeof(OpcUa_ExtensionObject));
+    OpcUa_ExtensionObject_Initialize(TestVariableNode->Value.Value.ExtensionObject);
+//    TestVariableNode->Value.Value.Array.Length = 3;
+//    TestVariableNode->Value.Value.Array.Value.ExtensionObjectArray = malloc(sizeof(OpcUa_ExtensionObject) * 3);
+//    memset(TestVariableNode->Value.Value.Array.Value.ExtensionObjectArray, 0x00, sizeof(OpcUa_ExtensionObject) * 3);
+//    for (int i = 0; i < 3; i++) {
+//        OpcUa_ExtensionObject * Ext = &TestVariableNode->Value.Value.Array.Value.ExtensionObjectArray[i];
+//        Ext->Encoding = OpcUa_ExtensionObjectEncoding_EncodeableObject;
+//        Ext->TypeId.ServerIndex = 0;
+//        Ext->TypeId.NodeId.IdentifierType = OpcUa_IdType_Numeric;
+//        Ext->TypeId.NodeId.Identifier.Numeric = OpcUaId_StatusResult_Encoding_DefaultBinary;
+//        Ext->TypeId.NodeId.NamespaceIndex = 0;
+//        Ext->Body.EncodeableObject.Type = &OpcUa_StatusResult_EncodeableType;
+//        Ext->Body.EncodeableObject.Object = malloc(sizeof(OpcUa_StatusResult));
+//        OpcUa_StatusResult_EncodeableType.Initialize(Ext->Body.EncodeableObject.Object);
+//        OpcUa_StatusResult * Res = Ext->Body.EncodeableObject.Object;
+//        Res->StatusCode = i;
+//    }
+
+    // ODBC TEST Functions
+//    OpcUa_String * Str = malloc(sizeof(OpcUa_String));
+//    OpcUa_String_Initialize(Str);
+//    OpcUa_String_AttachCopy(Str, "SessionName");
+//    Session * UserSession = SessionManager_AddSession(SessionManagerHandle, 0, Str, NULL, NULL, NULL);
+//    UserSession->IsActivated = OpcUa_True;
+//    OpcUa_String_Delete(&Str);
+//    free(Str);
+//    
+//    // sqlconnect
+//    int NoOutputArgs; OpcUa_Variant * OutputArgs;
+//    OpcUa_Variant * Input = malloc(sizeof(OpcUa_Variant));
+//    OpcUa_Variant_Initialize(Input);
+//    Input[0].ArrayType = OpcUa_VariantArrayType_Scalar;
+//    Input[0].Datatype = OpcUaType_String;
+//    OpcUa_String_AttachCopy(&Input[0].Value.String, "Driver={MariaDB ODBC 3.0 Driver};DB=UADatabase;Server=localhost;UID=root;PWD=root;");
+//    UASQLConnect(&UserSession->AuthenticationToken, 1, Input, &NoOutputArgs, &OutputArgs);
+//    OpcUa_Variant_Clear(Input);
+//    OpcUa_Variant_ClearArray(OutputArgs, NoOutputArgs);
+//    free(Input);
+//    free(OutputArgs);
+//    
+//    // sqlsetautocommit
+//    NoOutputArgs = 0; OutputArgs = NULL;
+//    Input = malloc(sizeof(OpcUa_Variant));
+//    OpcUa_Variant_Initialize(Input);
+//    Input[0].ArrayType = OpcUa_VariantArrayType_Scalar;
+//    Input[0].Datatype = OpcUaType_Boolean;
+//    Input[0].Value.Boolean = OpcUa_True; // autocommit on
+//    UASQLSetCommit(&UserSession->AuthenticationToken, 1, Input, &NoOutputArgs, &OutputArgs);
+//    OpcUa_Variant_Clear(Input);
+//    OpcUa_Variant_ClearArray(OutputArgs, NoOutputArgs);
+//    free(Input);
+//    free(OutputArgs);
+//    
+//    // sqlexecute ddl
+//    NoOutputArgs = 0; OutputArgs = NULL;
+//    Input = malloc(sizeof(OpcUa_Variant));
+//    OpcUa_Variant_Initialize(Input);
+//    Input[0].ArrayType = OpcUa_VariantArrayType_Scalar;
+//    Input[0].Datatype = OpcUaType_String;
+//    OpcUa_String_AttachCopy(&Input[0].Value.String, "create table if not exists A (ColA INT, ColB VARCHAR(2048));");
+//    UASQLExecute(&UserSession->AuthenticationToken, 1, Input, &NoOutputArgs, &OutputArgs);
+//    OpcUa_Variant_Clear(Input);
+//    OpcUa_Variant_ClearArray(OutputArgs, NoOutputArgs);
+//    free(Input);
+//    free(OutputArgs);
+//    
+//    // sqlinsert
+//    NoOutputArgs = 0; OutputArgs = NULL;
+//    Input = malloc(sizeof(OpcUa_Variant));
+//    OpcUa_Variant_Initialize(Input);
+//    Input[0].ArrayType = OpcUa_VariantArrayType_Scalar;
+//    Input[0].Datatype = OpcUaType_String;
+//    OpcUa_String_AttachCopy(&Input[0].Value.String, "{\"table_name\":\"A\",\"attrs\":[{\"ColA\":\"INT\"},{\"ColB\":\"VARCHAR\"}],\"rows\":[[1,\"abc\"]]}");
+//    UASQLInsert(&UserSession->AuthenticationToken, 1, Input, &NoOutputArgs, &OutputArgs);
+//    OpcUa_Variant_Clear(Input);
+//    OpcUa_Variant_ClearArray(OutputArgs, NoOutputArgs);
+//    free(Input);
+//    free(OutputArgs);
+//    
+//    // sqlselect
+//    NoOutputArgs = 0; OutputArgs = NULL;
+//    Input = malloc(sizeof(OpcUa_Variant));
+//    OpcUa_Variant_Initialize(Input);
+//    Input[0].ArrayType = OpcUa_VariantArrayType_Scalar;
+//    Input[0].Datatype = OpcUaType_String;
+//    OpcUa_String_AttachCopy(&Input[0].Value.String, "select * from A");
+//    UASQLSelect(&UserSession->AuthenticationToken, 1, Input, &NoOutputArgs, &OutputArgs);
+//    printf("Output: %s\n", OpcUa_String_GetRawString(&OutputArgs[2].Value.String));
+//    OpcUa_Variant_Clear(Input);
+//    OpcUa_Variant_ClearArray(OutputArgs, NoOutputArgs);
+//    free(Input);
+//    free(OutputArgs);
+//    
+//    // sqlupdate
+//    NoOutputArgs = 0; OutputArgs = NULL;
+//    Input = malloc(sizeof(OpcUa_Variant));
+//    OpcUa_Variant_Initialize(Input);
+//    Input[0].ArrayType = OpcUa_VariantArrayType_Scalar;
+//    Input[0].Datatype = OpcUaType_String;
+//    OpcUa_String_AttachCopy(&Input[0].Value.String, "{\"table_name\":\"A\",\"attrs\":[{\"ColB\":\"VARCHAR\"}],\"rows\":[[\"c\"]],\"query\":\"ColA=1\"}");
+//    UASQLUpdate(&UserSession->AuthenticationToken, 1, Input, &NoOutputArgs, &OutputArgs);
+//    OpcUa_Variant_Clear(Input);
+//    OpcUa_Variant_ClearArray(OutputArgs, NoOutputArgs);
+//    free(Input);
+//    free(OutputArgs);
+//    
+//    // sqldelete
+////    NoOutputArgs = 0; OutputArgs = NULL;
+////    Input = malloc(sizeof(OpcUa_Variant));
+////    OpcUa_Variant_Initialize(Input);
+////    Input[0].ArrayType = OpcUa_VariantArrayType_Scalar;
+////    Input[0].Datatype = OpcUaType_String;
+////    OpcUa_String_AttachCopy(&Input[0].Value.String, "{\"table_name\":\"A\",\"query\":\"ColA in (1,2)\"}");
+////    UASQLDelete(&UserSession->AuthenticationToken, 1, Input, &NoOutputArgs, &OutputArgs);
+////    OpcUa_Variant_Clear(Input);
+////    OpcUa_Variant_ClearArray(OutputArgs, NoOutputArgs);
+////    free(Input);
+////    free(OutputArgs);
+//    
+//    // sqlcomit
+//    NoOutputArgs = 0; OutputArgs = NULL;
+//    Input = malloc(sizeof(OpcUa_Variant));
+//    OpcUa_Variant_Initialize(Input);
+//    Input[0].ArrayType = OpcUa_VariantArrayType_Scalar;
+//    Input[0].Datatype = OpcUaType_Boolean;
+//    Input[0].Value.Boolean = OpcUa_False; // commit
+//    UASQLCommit(&UserSession->AuthenticationToken, 1, Input, &NoOutputArgs, &OutputArgs);
+//    OpcUa_Variant_Clear(Input);
+//    OpcUa_Variant_ClearArray(OutputArgs, NoOutputArgs);
+//    free(Input);
+//    free(OutputArgs);
+//    
+//    // sqldisconnect
+//    NoOutputArgs = 0; OutputArgs = NULL;
+//    UASQLDisconnect(&UserSession->AuthenticationToken, 0, NULL, &NoOutputArgs, &OutputArgs);
+//    OpcUa_Variant_ClearArray(OutputArgs, NoOutputArgs);
+//    free(OutputArgs);
+
+
+// CreateSession() combined with ActivateSession() local success test
+    /*OpcUa_ApplicationDescription ClientDescription;
+    OpcUa_ApplicationDescription_Initialize(&ClientDescription);
+    OpcUa_String_AttachCopy(&ClientDescription.ApplicationName.Text, "ApplicationName");
+    OpcUa_String_AttachCopy(&ClientDescription.ApplicationUri, "ApplicationUri");
+    OpcUa_String_AttachCopy(&ClientDescription.ProductUri, "ProductUri");
+    ClientDescription.ApplicationType = OpcUa_ApplicationType_Client;
+    OpcUa_String ServerUri; OpcUa_String_Initialize(&ServerUri); OpcUa_String_AttachCopy(&ServerUri, "opc.tcp://localhost:4840");
+    OpcUa_String SessionName; OpcUa_String_Initialize(&SessionName); OpcUa_String_AttachCopy(&SessionName, "SessionName");
+    OpcUa_ByteString ClientNonce; OpcUa_ByteString_Initialize(&ClientNonce); ClientNonce.Length = 32;
+    ClientNonce.Data = malloc(sizeof(OpcUa_Byte) * 32);
+    for (int i = 0; i < 32; i++) {
+        ClientNonce.Data[i] = i;
+    }
+
+    OpcUa_NodeId SessionId; OpcUa_NodeId AuthenticationToken; OpcUa_Double SessionTimeout; 
+    OpcUa_ByteString ServerNonce; OpcUa_ByteString_Initialize(&ServerNonce);
+    OpcUa_ByteString ServerCertificate; OpcUa_ByteString_Initialize(&ServerCertificate);
+    OpcUa_Int32 NoEndpoints; OpcUa_EndpointDescription * ServerEndpoints;
+    OpcUa_Int32 NoSoftwareCertificates; OpcUa_SignedSoftwareCertificate * SoftwareCertificates;
+    OpcUa_SignatureData Signature; OpcUa_SignatureData_Initialize(&Signature); OpcUa_UInt32 MaxRequestMessageSize;
+    UA_CreateSession(NULL, NULL, NULL, &ClientDescription, &ServerUri, &ServerUri, &SessionName, &ClientNonce, &GlobalSecurityHandle->ServerCertificate, 0, 0,
+                     NULL, &SessionId, &AuthenticationToken, &SessionTimeout, &ServerNonce, &ServerCertificate, &NoEndpoints,
+                     &ServerEndpoints, &NoSoftwareCertificates, &SoftwareCertificates, &Signature, &MaxRequestMessageSize);
+    
+    OpcUa_RequestHeader Header;
+    OpcUa_RequestHeader_Initialize(&Header);
+    OpcUa_NodeId_CopyTo(&AuthenticationToken, &Header.AuthenticationToken);
+        
+    OpcUa_SignatureData ClientSignature;
+    size_t NumBytes = GlobalSecurityHandle->ServerCertificate.Length + ServerNonce.Length;
+    OpcUa_ByteString SignatureStr;
+    OpcUa_ByteString_Initialize(&SignatureStr);
+    SignatureStr.Length = NumBytes;
+    OpcUa_Byte * SignatureMessage = malloc(sizeof(OpcUa_Byte) * NumBytes);
+    memcpy(SignatureMessage, GlobalSecurityHandle->ServerCertificate.Data, sizeof(OpcUa_Byte) * GlobalSecurityHandle->ServerCertificate.Length);
+    memcpy(SignatureMessage + sizeof(OpcUa_Byte) * GlobalSecurityHandle->ServerCertificate.Length, ServerNonce.Data, sizeof(OpcUa_Byte) * ServerNonce.Length);
+    SignatureStr.Data = SignatureMessage;
+    OpcUa_SignatureData_Initialize(&ClientSignature);
+    OpcUa_String_AttachCopy(&ClientSignature.Algorithm, OpcUa_P_RSA_PKCS1_OAEP_SHA256_Name);
+    
+    OpcUa_CryptoProvider * CProvider = malloc(sizeof(OpcUa_CryptoProvider));
+    OpcUa_CryptoProvider_Create(OpcUa_SecurityPolicy_Basic256Sha256, CProvider);
+    OpcUa_Key ServerPublicKey;
+    OpcUa_Key_Initialize(&ServerPublicKey);
+    CProvider->GetPublicKeyFromCert(CProvider, &GlobalSecurityHandle->ServerCertificate, NULL, &ServerPublicKey);
+    OpcUa_Int KeyLengthBits;
+    CProvider->GetAsymmetricKeyLength(CProvider, ServerPublicKey, &KeyLengthBits);
+    ClientSignature.Signature.Length = KeyLengthBits/8;
+    ClientSignature.Signature.Data = malloc(sizeof(OpcUa_Byte) * KeyLengthBits/8);
+    CProvider->AsymmetricSign(CProvider, SignatureStr, &GlobalSecurityHandle->ServerPrivateKey, &ClientSignature.Signature);
+    OpcUa_ByteString_Clear(&SignatureStr);
+    
+    OpcUa_ExtensionObject UserIdentity;
+    OpcUa_ExtensionObject_Initialize(&UserIdentity);
+    UserIdentity.Body.EncodeableObject.Type = &OpcUa_UserNameIdentityToken_EncodeableType;
+    UserIdentity.Encoding = OpcUa_ExtensionObjectEncoding_EncodeableObject;
+    UserIdentity.Body.EncodeableObject.Object = malloc(sizeof(OpcUa_UserNameIdentityToken));
+    OpcUa_UserNameIdentityToken_Initialize(UserIdentity.Body.EncodeableObject.Object);
+    OpcUa_String_AttachCopy(&((OpcUa_UserNameIdentityToken*)UserIdentity.Body.EncodeableObject.Object)->PolicyId, "2");
+    OpcUa_String_AttachCopy(&((OpcUa_UserNameIdentityToken*)UserIdentity.Body.EncodeableObject.Object)->UserName, "william");
+    OpcUa_UserNameIdentityToken * Token = UserIdentity.Body.EncodeableObject.Object;
+    
+    OpcUa_Byte * EncryptBytes = malloc(sizeof(OpcUa_Byte) * 42);
+    for (int i = 0; i < 10; i++) {
+        EncryptBytes[i] = kAddressSpace_Password[i];
+    }
+    
+    memcpy(EncryptBytes + 10, ServerNonce.Data, sizeof(OpcUa_Byte) * 32);
+    OpcUa_UInt32 CipherTextLen;
+    CProvider->AsymmetricEncrypt(CProvider, EncryptBytes, 42, &ServerPublicKey, NULL, &CipherTextLen);
+    OpcUa_Byte * CipherText = malloc(sizeof(OpcUa_Byte) * (CipherTextLen + 4));
+    CProvider->AsymmetricEncrypt(CProvider, EncryptBytes, 42, &ServerPublicKey, CipherText + 4, &CipherTextLen);
+    CipherText[0] = CipherTextLen & 0xFF;
+    CipherText[1] = (CipherTextLen >> 8) & 0xFF;
+    CipherText[2] = (CipherTextLen >> 16) & 0xFF;
+    CipherText[3] = (CipherTextLen >> 24) & 0xFF;
+    OpcUa_String_AttachCopy(&Token->EncryptionAlgorithm, OpcUa_P_RSA_OAEP_Name);
+    Token->Password.Length = CipherTextLen;
+    Token->Password.Data = CipherText;
+    free(EncryptBytes);
+    OpcUa_CryptoProvider_Delete(CProvider);
+    OpcUa_Key_Clear(&ServerPublicKey);
+    free(CProvider);
+    
+    OpcUa_ByteString SecondNonce;
+    OpcUa_ByteString_Initialize(&SecondNonce);
+    UA_ActivateSession(NULL, NULL, &Header, &ClientSignature, 0, NULL, 0, NULL, &UserIdentity, NULL, NULL, &SecondNonce, NULL, NULL, NULL, NULL);
+    
+    OpcUa_SignatureData_Clear(&ClientSignature);
+    OpcUa_ByteString_Clear(&SecondNonce);
+    OpcUa_ExtensionObject_Clear(&UserIdentity);
+    OpcUa_ApplicationDescription_Clear(&ClientDescription);
+    OpcUa_String_Clear(&ServerUri);
+    OpcUa_String_Clear(&SessionName);
+    OpcUa_ByteString_Clear(&ClientNonce);
+    OpcUa_ByteString_Clear(&ServerCertificate);
+    OpcUa_SignatureData_Clear(&Signature);
+    OpcUa_ByteString_Clear(&ServerNonce);
+    for (int i = 0; i < NoEndpoints; i++) {
+        OpcUa_EndpointDescription_Clear(&ServerEndpoints[i]);
+    }
+    free(ServerEndpoints);*/
+    
+    // GetEndpoints() local test
+    /*OpcUa_Int32 NoEndpoints;
+    OpcUa_EndpointDescription * Endpoints;
+    UA_GetEndpoints(NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, &NoEndpoints, &Endpoints);
+    for (int i = 0; i < NoEndpoints; i++) {
+        OpcUa_EndpointDescription Endpoint = Endpoints[i];
+        printf("%s\n", OpcUa_String_GetRawString(&Endpoint.EndpointUrl));
+        printf("%s\n", OpcUa_String_GetRawString(&Endpoint.SecurityPolicyUri));
+        for (int b = 0; b < Endpoint.ServerCertificate.Length; b++) {
+            printf("%02X", Endpoint.ServerCertificate.Data[b]);
+        }
+        printf("\n");
+        OpcUa_EndpointDescription_Clear(&Endpoint);
+    }
+    
+    free(Endpoints);*/
+    
+    // FindServers() local test
+    /*OpcUa_Int32 NoServers;
+    OpcUa_ApplicationDescription * Servers;
+    UA_FindServers(NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, &NoServers, &Servers);
+    for (int i = 0; i < NoServers; i++) {
+        OpcUa_ApplicationDescription Desc = Servers[i];
+        printf("%s\n", OpcUa_String_GetRawString(&Desc.ApplicationName.Text));
+        OpcUa_ApplicationDescription_Clear(&Servers[i]);
+    }
+    
+    free(Servers);*/
+    
+    // Browse() function
+    /*OpcUa_BrowsePath * BrowsePaths = malloc(sizeof(OpcUa_BrowsePath));
+    OpcUa_BrowsePath_Initialize(BrowsePaths);
+    BrowsePaths->StartingNode.Identifier.Numeric = OpcUaId_BaseObjectType;
+    BrowsePaths->RelativePath.NoOfElements = 2;
+    BrowsePaths->RelativePath.Elements = malloc(sizeof(OpcUa_RelativePathElement) * 2);
+    OpcUa_RelativePathElement_Initialize(&BrowsePaths->RelativePath.Elements[0]);
+    OpcUa_RelativePathElement_Initialize(&BrowsePaths->RelativePath.Elements[1]);
+    BrowsePaths->RelativePath.Elements[0].IsInverse = OpcUa_False;
+    BrowsePaths->RelativePath.Elements[0].ReferenceTypeId.Identifier.Numeric = OpcUaId_HasSubtype;
+    OpcUa_String_AttachCopy(&BrowsePaths->RelativePath.Elements[0].TargetName.Name, "BaseEventType");
+    
+    BrowsePaths->RelativePath.Elements[1].IsInverse = OpcUa_False;
+    BrowsePaths->RelativePath.Elements[1].ReferenceTypeId.Identifier.Numeric = OpcUaId_HasProperty;
+//    OpcUa_String_AttachCopy(&BrowsePaths->RelativePath.Elements[1].TargetName.Name, "Time");
+    
+    OpcUa_Int32 NoResults; OpcUa_Int32 NoDiagnostics;
+    OpcUa_BrowsePathResult * Result; OpcUa_DiagnosticInfo * Diagnostics;
+    UA_TranslateBrowsePathsToNodeIds(NULL, NULL, NULL, 1, BrowsePaths, NULL, &NoResults, &Result, &NoDiagnostics, &Diagnostics);
+    for (int i = 0; i < Result->NoOfTargets; i++) {
+        BaseAttributes * Attrs = AddressSpace_GetNode(GlobalAddressSpaceHandle, &Result->Targets[i].TargetId.NodeId);
+        printf("%s, %d\n", Attrs->BrowseName, Result->Targets[i].TargetId.NodeId.Identifier.Numeric);
+    }
+    
+    OpcUa_BrowsePathResult_Clear(Result);
+    OpcUa_BrowsePath_Clear(BrowsePaths);
+    free(Result);
+    free(BrowsePaths);*/
+    
+    /*
+    // test full batch of Write() function
+    // write function() cannot adjust for new lengths of valued data...
+    VariableNode * VarNode;
+    AddressSpace_CreateVariableNode(Handle, &VarNode, NULL);
+    VarNode->BaseAttribute.NodeId.NamespaceIndex = 5;
+    VarNode->BaseAttribute.NodeId.Identifier.Numeric = 100;
+    
+    VarNode->ValueRank = OpcUa_ValueRanks_OneDimension;
+    VarNode->Value.ArrayType = OpcUa_VariantArrayType_Array;
+    VarNode->Value.Datatype = OpcUaType_ExtensionObject;
+//    VarNode->Value.Value.Array.Length = 5;
+    
+    // test for changing data type from status result to Argument
+    OpcUa_ExpandedNodeId StatusResultNode = OPCExpandedNodeId(OpcUaId_Argument);
+    OpcUa_NodeId_CopyTo(&StatusResultNode.NodeId, &VarNode->DataType);
+    VarNode->Value.Value.Array.Length = 5;
+    VarNode->Value.Value.Array.Value.ExtensionObjectArray = malloc(sizeof(OpcUa_ExtensionObject) * 5);
+    for (int i = 0; i < 5; i++) {
+        OpcUa_ExtensionObject_Initialize(&VarNode->Value.Value.Array.Value.ExtensionObjectArray[i]);
+        VarNode->Value.Value.Array.Value.ExtensionObjectArray[i].Encoding = OpcUa_ExtensionObjectEncoding_EncodeableObject;
+        VarNode->Value.Value.Array.Value.ExtensionObjectArray[i].TypeId.ServerIndex = StatusResultNode.ServerIndex;
+        OpcUa_NodeId_CopyTo(&StatusResultNode.NodeId, &VarNode->Value.Value.Array.Value.ExtensionObjectArray[i].TypeId.NodeId);
+        VarNode->Value.Value.Array.Value.ExtensionObjectArray[i].Body.EncodeableObject.Type = &OpcUa_Argument_EncodeableType;
+        VarNode->Value.Value.Array.Value.ExtensionObjectArray[i].Body.EncodeableObject.Object = malloc(sizeof(OpcUa_Argument));
+        OpcUa_Argument_Initialize(VarNode->Value.Value.Array.Value.ExtensionObjectArray[i].Body.EncodeableObject.Object);
+        OpcUa_String_AttachCopy(&((OpcUa_Argument*)VarNode->Value.Value.Array.Value.ExtensionObjectArray[i].Body.EncodeableObject.Object)->Name, "default");
+    }
+    
+//    VarNode->Value.Value.Array.Value.DoubleArray = malloc(sizeof(OpcUa_Double) * 5);
+//    VarNode->Value.Value.Array.Value.DoubleArray[0] = 0.01;
+//    VarNode->Value.Value.Array.Value.DoubleArray[1] = 1.01;
+//    VarNode->Value.Value.Array.Value.DoubleArray[2] = 2.01;
+//    VarNode->Value.Value.Array.Value.DoubleArray[3] = 3.01;
+//    VarNode->Value.Value.Array.Value.DoubleArray[4] = 4.01;
+    
+//    OpcUa_ExpandedNodeId StatusResultNode = OPCExpandedNodeId(OpcUaId_StatusResult);
+//    OpcUa_NodeId_CopyTo(&StatusResultNode.NodeId, &VarNode->DataType);
+//    VarNode->Value.Value.ExtensionObject = malloc(sizeof(OpcUa_ExtensionObject));
+//    OpcUa_ExtensionObject_Initialize(VarNode->Value.Value.ExtensionObject);
+//    VarNode->Value.Value.ExtensionObject->Encoding = OpcUa_ExtensionObjectEncoding_EncodeableObject;
+//    VarNode->Value.Value.ExtensionObject->TypeId.ServerIndex = StatusResultNode.ServerIndex;
+//    OpcUa_NodeId_CopyTo(&StatusResultNode.NodeId, &VarNode->Value.Value.ExtensionObject->TypeId.NodeId);
+//    VarNode->Value.Value.ExtensionObject->Body.EncodeableObject.Type = &OpcUa_StatusResult_EncodeableType;
+//    VarNode->Value.Value.ExtensionObject->Body.EncodeableObject.Object = malloc(sizeof(OpcUa_StatusResult));
+//    OpcUa_StatusResult_Initialize(VarNode->Value.Value.ExtensionObject->Body.EncodeableObject.Object);
+    
+//    VarNode->Value.Value.Double = -1.05;
+//    OpcUa_String_AttachCopy(&VarNode->Value.Value.String, "herro world!");
+    
+//    VarNode->Value.ArrayType = OpcUa_VariantArrayType_Array;
+//    VarNode->Value.Datatype = OpcUaType_Double;
+//    VarNode->Value.Value.Array.Length = 5;
+//    VarNode->Value.Value.Array.Value.DoubleArray = malloc(sizeof(OpcUa_Double) * 5);
+//    VarNode->Value.Value.Array.Value.DoubleArray[0] = 0.01;
+//    VarNode->Value.Value.Array.Value.DoubleArray[1] = 1.01;
+//    VarNode->Value.Value.Array.Value.DoubleArray[2] = 2.01;
+//    VarNode->Value.Value.Array.Value.DoubleArray[3] = 3.01;
+//    VarNode->Value.Value.Array.Value.DoubleArray[4] = 4.01;
+    
+    OpcUa_WriteValue * WriteValue = malloc(sizeof(OpcUa_WriteValue));
+    OpcUa_WriteValue_Initialize(WriteValue);
+    WriteValue->NodeId.NamespaceIndex = 5;
+    WriteValue->NodeId.Identifier.Numeric = 100;
+    
+    VarNode->BaseAttribute.WriteMask = OpcUa_Int32_Max; // works!
+    VarNode->AccessLevel = 127; VarNode->UserAccessLevel = VarNode->AccessLevel;
+    
+    WriteValue->AttributeId = OpcUa_Attributes_Value;
+    WriteValue->Value.Value.ArrayType = OpcUa_VariantArrayType_Array;
+    WriteValue->Value.Value.Datatype = OpcUaType_ExtensionObject;
+    WriteValue->Value.Value.Value.Array.Length = 3;
+    WriteValue->Value.Value.Value.Array.Value.ExtensionObjectArray = malloc(sizeof(OpcUa_ExtensionObject) * 3);
+    char * texts[3] = {"insert", "delete", "update"};
+    for (int i = 0; i < 3; i++) {
+        OpcUa_ExtensionObject_Initialize(&WriteValue->Value.Value.Value.Array.Value.ExtensionObjectArray[i]);
+        WriteValue->Value.Value.Value.Array.Value.ExtensionObjectArray[i].Encoding = OpcUa_ExtensionObjectEncoding_EncodeableObject;
+        WriteValue->Value.Value.Value.Array.Value.ExtensionObjectArray[i].TypeId.ServerIndex = 0;
+        OpcUa_NodeId Node = OPCNodeId(OpcUaId_Argument);
+        OpcUa_NodeId_CopyTo(&Node, &WriteValue->Value.Value.Value.Array.Value.ExtensionObjectArray[i].TypeId.NodeId);
+        WriteValue->Value.Value.Value.Array.Value.ExtensionObjectArray[i].Body.EncodeableObject.Type = &OpcUa_Argument_EncodeableType;
+        WriteValue->Value.Value.Value.Array.Value.ExtensionObjectArray[i].Body.EncodeableObject.Object = malloc(sizeof(OpcUa_Argument));
+        OpcUa_Argument_Initialize(WriteValue->Value.Value.Value.Array.Value.ExtensionObjectArray[i].Body.EncodeableObject.Object);
+        OpcUa_String_AttachCopy(&((OpcUa_Argument*)WriteValue->Value.Value.Value.Array.Value.ExtensionObjectArray[i].Body.EncodeableObject.Object)->Name, texts[i]);
+    }
+    OpcUa_String_AttachCopy(&WriteValue->IndexRange, "1:3");
+    
+//    WriteValue->Value.Value.Value.Array.Length = 3;
+//    WriteValue->Value.Value.Value.Array.Value.DoubleArray = malloc(sizeof(OpcUa_Double) * 3);
+//    WriteValue->Value.Value.Value.Array.Value.DoubleArray[0] = 10;
+//    WriteValue->Value.Value.Value.Array.Value.DoubleArray[1] = 20;
+//    WriteValue->Value.Value.Value.Array.Value.DoubleArray[2] = 30;
+//    OpcUa_String_AttachCopy(&WriteValue->IndexRange, "1:3");
+    
+//    WriteValue->Value.Value.Datatype = OpcUaType_Double;
+//    WriteValue->Value.Value.Value.Array.Length = 3;
+//    WriteValue->Value.Value.Value.Array.Value.DoubleArray = malloc(sizeof(OpcUa_Double) * 3);
+//    WriteValue->Value.Value.Value.Array.Value.DoubleArray[0] = 10;
+//    WriteValue->Value.Value.Value.Array.Value.DoubleArray[1] = 20;
+//    WriteValue->Value.Value.Value.Array.Value.DoubleArray[2] = 30;
+//    OpcUa_String_AttachCopy(&WriteValue->IndexRange, "1:3");
+    
+//    WriteValue->Value.Value.Value.ExtensionObject = malloc(sizeof(OpcUa_ExtensionObject));
+//    OpcUa_ExtensionObject_Initialize(WriteValue->Value.Value.Value.ExtensionObject);
+//    WriteValue->Value.Value.Value.ExtensionObject->Encoding = OpcUa_ExtensionObjectEncoding_EncodeableObject;
+//    WriteValue->Value.Value.Value.ExtensionObject->TypeId.ServerIndex = StatusResultNode.ServerIndex;
+//    OpcUa_NodeId_CopyTo(&StatusResultNode.NodeId, &WriteValue->Value.Value.Value.ExtensionObject->TypeId.NodeId);
+//    WriteValue->Value.Value.Value.ExtensionObject->Body.EncodeableObject.Type = &OpcUa_StatusResult_EncodeableType;
+//    WriteValue->Value.Value.Value.ExtensionObject->Body.EncodeableObject.Object = malloc(sizeof(OpcUa_StatusResult));
+//    OpcUa_StatusResult_Initialize(WriteValue->Value.Value.Value.ExtensionObject->Body.EncodeableObject.Object);
+//    ((OpcUa_StatusResult*)WriteValue->Value.Value.Value.ExtensionObject->Body.EncodeableObject.Object)->StatusCode = OpcUa_Bad;
+            
+//    WriteValue->AttributeId = OpcUa_Attributes_AccessLevel; // access level test
+//    WriteValue->Value.Value.ArrayType = OpcUa_VariantArrayType_Scalar;
+//    WriteValue->Value.Value.Datatype = OpcUaType_Byte;
+//    WriteValue->Value.Value.Value.Byte = 127;
+    
+    int NumResults; int NumDiagnostics; 
+    OpcUa_StatusCode * Results; OpcUa_DiagnosticInfo * Diags;
+    
+    UA_Write(NULL, NULL, NULL, 1, WriteValue, NULL, &NumResults, &Results, &NumDiagnostics, &Diags);
+    for (int i = 0; i < VarNode->Value.Value.Array.Length; i++) {
+        char * raw = OpcUa_String_GetRawString(&((OpcUa_Argument*)VarNode->Value.Value.Array.Value.ExtensionObjectArray[i].Body.EncodeableObject.Object)->Name);
+        if (raw == NULL) {
+            printf("failed\n");
+        } else
+            printf("%s\n", raw);
+    }
+    AddressSpace_RemoveVariableNode(Handle, VarNode);
+    OpcUa_WriteValue_Clear(WriteValue);
+    free(WriteValue);
+    OpcUa_StatusCode_Clear(Results);
+    free(Results);*/
+    
+    // test call() function
+    /*
+    OpcUa_CallMethodRequest * Request = malloc(sizeof(OpcUa_CallMethodRequest));
+    OpcUa_CallMethodRequest_Initialize(Request);
+    Request->NoOfInputArguments = 1;
+    Request->InputArguments = malloc(sizeof(OpcUa_Variant));
+    OpcUa_Variant_Initialize(Request->InputArguments);
+    Request->InputArguments[0].Datatype = OpcUaType_String;
+    Request->InputArguments[0].ArrayType = OpcUa_VariantArrayType_Scalar;
+    Request->MethodId.NamespaceIndex = 3;
+    Request->MethodId.Identifier.Numeric = 3209;
+    Request->ObjectId.NamespaceIndex = 3;
+    Request->ObjectId.Identifier.Numeric = 3204;
+    OpcUa_String_AttachCopy(&Request->InputArguments->Value.String, "select * from awesome");
+    
+    OpcUa_Int32 NoResults; OpcUa_Int32 NoDiagnostics;
+    OpcUa_CallMethodResult * Results; OpcUa_DiagnosticInfo * DiagnosticInfos;
+    UA_Call(NULL, NULL, NULL, 1, Request, NULL, &NoResults, &Results, &NoDiagnostics, &DiagnosticInfos);
+    printf("%s\n",OpcUa_String_GetRawString(&Results->OutputArguments->Value.String));
+    
+    OpcUa_CallMethodRequest_Clear(Request);
+    OpcUa_CallMethodResult_Clear(Results);
+    free(Request);
+    free(Results);
+     */
+    
+    // Test Read() function
+    /*VariableNode * VarNode;
+    AddressSpace_CreateVariableNode(Handle, &VarNode, NULL);
+    VarNode->BaseAttribute.NodeId.NamespaceIndex = 5;
+    VarNode->BaseAttribute.NodeId.Identifier.Numeric = 100;
+    OpcUa_ReadValueId * ReadValueId = malloc(sizeof(OpcUa_ReadValueId));
+    OpcUa_ReadValueId_Initialize(ReadValueId);
+    ReadValueId->DataEncoding.NamespaceIndex = 0;
+    OpcUa_String_AttachCopy(&ReadValueId->DataEncoding.Name, "Default Binary");
+    ReadValueId->NodeId.Identifier.Numeric = 100;
+    ReadValueId->NodeId.NamespaceIndex = 5;
+    int NumResults; int NumDiagnostics; 
+    OpcUa_DataValue * Results; OpcUa_DiagnosticInfo * Diags;
+    
+    ReadValueId->AttributeId = OpcUa_Attributes_Value;
+    OpcUa_String_AttachCopy(&ReadValueId->IndexRange, "1:3");
+    VarNode->Value.ArrayType = OpcUa_VariantArrayType_Array;
+    VarNode->Value.Datatype = OpcUaType_Double;
+    VarNode->Value.Value.Array.Length = 5;
+    VarNode->Value.Value.Array.Value.DoubleArray = malloc(sizeof(OpcUa_Double) * 5);
+    VarNode->Value.Value.Array.Value.DoubleArray[0] = 0.01;
+    VarNode->Value.Value.Array.Value.DoubleArray[1] = 1.01;
+    VarNode->Value.Value.Array.Value.DoubleArray[2] = 2.01;
+    VarNode->Value.Value.Array.Value.DoubleArray[3] = 3.01;
+    VarNode->Value.Value.Array.Value.DoubleArray[4] = 4.01;
+    
+    UA_Read(NULL, NULL, NULL, 100, OpcUa_TimestampsToReturn_Both, 1, ReadValueId, NULL, &NumResults, &Results, &NumDiagnostics, &Diags);
+    for (int i = 0; i < Results->Value.Value.Array.Length; i++) {
+        printf("%f\n", Results->Value.Value.Array.Value.DoubleArray[i]);
+    }
+    printf("\n");
+    
+    AddressSpace_RemoveVariableNode(Handle, VarNode);
+    OpcUa_ReadValueId_Clear(ReadValueId);
+    free(ReadValueId);
+    OpcUa_DataValue_Clear(Results);
+    free(Results);*/
+    
+    // test Browse suite of functions
+    /*OpcUa_BrowseDescription * Browse = malloc(sizeof(OpcUa_BrowseDescription));
+    Browse[0].BrowseDirection = OpcUa_BrowseDirection_Both;
+    Browse[0].IncludeSubtypes = OpcUa_True;
+    OpcUa_NodeId_Initialize(&Browse[0].ReferenceTypeId);
+    Browse[0].ReferenceTypeId.Identifier.Numeric = OpcUaId_References;
+    Browse[0].ResultMask = 63;
+    Browse[0].NodeClassMask = 255;
+    OpcUa_NodeId_Initialize(&Browse[0].NodeId);
+    Browse[0].NodeId.Identifier.Numeric = OpcUaId_BaseObjectType;
+    OpcUa_Int32 ResultsCount;
+    OpcUa_BrowseResult * Results;
+    OpcUa_Int32 NoOfDiagnosticsResults;
+    OpcUa_DiagnosticInfo * Diags;
+    UA_Browse(NULL, NULL, NULL, NULL, 5, 1, Browse, NULL, &ResultsCount, &Results, &NoOfDiagnosticsResults, &Diags);
+    
+    OpcUa_ByteString * BrowseNext = malloc(sizeof(OpcUa_ByteString));
+    BrowseNext->Length = Results[0].ContinuationPoint.Length;
+    BrowseNext->Data = malloc(sizeof(OpcUa_Byte) * BrowseNext->Length);
+    memcpy(BrowseNext->Data, Results[0].ContinuationPoint.Data, sizeof(OpcUa_Byte) * BrowseNext->Length);
+    
+    free(Browse);
+    for (int i = 0; i < ResultsCount; i++) {
+        OpcUa_ByteString_Clear(&Results[i].ContinuationPoint);
+        for (int j = 0; j < Results[i].NoOfReferences; j++) {
+            printf("BrowseName: %s\n", OpcUa_String_GetRawString(&Results[i].References[j].BrowseName.Name));
+            
+            OpcUa_ReferenceDescription_Clear(&Results[i].References[j]);
+        }
+        
+        free(Results[i].References);        
+    }
+    free(Results);
+    
+    OpcUa_Int32 NextResultCount;
+    OpcUa_BrowseResult * NextResults;
+    UA_BrowseNext(NULL, NULL, NULL, OpcUa_False, 1, BrowseNext, NULL, &NextResultCount, &NextResults, &NoOfDiagnosticsResults, &Diags);
+    for (int i = 0; i < NextResultCount; i++) {
+        OpcUa_ByteString_Clear(&NextResults[i].ContinuationPoint);
+        for (int j = 0; j < NextResults[i].NoOfReferences; j++) {
+            printf("BrowseName: %s\n", OpcUa_String_GetRawString(&NextResults[i].References[j].BrowseName.Name));
+            
+            OpcUa_ReferenceDescription_Clear(&NextResults[i].References[j]);
+        }
+        
+        free(NextResults[i].References);        
+    }
+    free(NextResults);
+    free(BrowseNext->Data);
+    free(BrowseNext);

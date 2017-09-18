@@ -1,0 +1,9 @@
+# default behavior
+* text=auto
+
+# sln always on CRLF
+*.sln text eol=crlf
+*.bat text eol=crlf
+
+# sh files always on LF
+*.sh text eol=lf

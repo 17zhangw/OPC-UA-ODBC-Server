@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1158CC45-9A1C-446F-B0C1-A160DEDF7BAA}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)Dependencies\UA-AnsiC\WindowsFile;$(ProjectDir)Dependencies\UA-AnsiC\openssl\include;D:\Program Files\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>$(ProjectDir)Dependencies\UA-AnsiC\lib\win32\uastack.lib;$(ProjectDir)Dependencies\UA-AnsiC\lib\win32\ssleay32.lib;$(ProjectDir)Dependencies\UA-AnsiC\lib\win32\libeay32.lib;ws2_32.lib;crypt32.lib;Rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\17zhangw\Desktop\UA-AnsiC\WindowsFile;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalDependencies>$(ProjectDir)Dependencies\UA-AnsiC\lib\win32\uastack.lib;$(ProjectDir)Dependencies\UA-AnsiC\lib\win32\ssleay32.lib;$(ProjectDir)Dependencies\UA-AnsiC\lib\win32\libeay32.lib;ws2_32.lib;crypt32.lib;Rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+    </Link>
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>$(ProjectDir)Dependencies\UA-AnsiC\WindowsFile;$(ProjectDir)Dependencies\UA-AnsiC\openssl\include;D:\Program Files\Visual Leak Detector\include;C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OmitFramePointers>false</OmitFramePointers>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="addressspace\AddressSpace.c" />
+    <ClCompile Include="addressspace\AddressSpaceCopier.c" />
+    <ClCompile Include="addressspace\AddressSpaceHelper.c" />
+    <ClCompile Include="addressspace\OPCDerivations.c" />
+    <ClCompile Include="cjson\cJSON.c" />
+    <ClCompile Include="functions\Access.c" />
+    <ClCompile Include="Functions\DML_SQLVariant.c" />
+    <ClCompile Include="functions\Discovery.c" />
+    <ClCompile Include="Functions\EXECUTE_SQLVariant.c" />
+    <ClCompile Include="functions\ExposedFunctions.c" />
+    <ClCompile Include="functions\RegisterUnregisterNodes.c" />
+    <ClCompile Include="functions\Session.c" />
+    <ClCompile Include="functions\UASQLFunctions.c" />
+    <ClCompile Include="Functions\UASQLInternal.c" />
+    <ClCompile Include="functions\UnimplementedFunctions.c" />
+    <ClCompile Include="Functions\QUERY_SQLVariant.c" />
+    <ClCompile Include="indexer\Aliaser.c" />
+    <ClCompile Include="indexer\Continuer.c" />
+    <ClCompile Include="indexer\Indexer.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="nbproject\private\cpp_standard_headers_indexer.cpp" />
+    <ClCompile Include="nbproject\private\c_standard_headers_indexer.c" />
+    <ClCompile Include="sessionmanager\SecurityManager.c" />
+    <ClCompile Include="sessionmanager\SessionManager.c" />
+    <ClCompile Include="test_win32.c" />
+    <ClCompile Include="uaspace\Base64.c" />
+    <ClCompile Include="uaspace\Initialize.c" />
+    <ClCompile Include="uaspace\InitializeCustom.c" />
+    <ClCompile Include="uaspace\InitializeObjects.c" />
+    <ClCompile Include="uaspace\InitializeObjectTypes.c" />
+    <ClCompile Include="uaspace\InitializeOtherTypes.c" />
+    <ClCompile Include="uaspace\InitializeTest.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".dep.inc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="addressspace\AddressSpace.h" />
+    <ClInclude Include="addressspace\AddressSpaceCopier.h" />
+    <ClInclude Include="addressspace\AddressSpaceHelper.h" />
+    <ClInclude Include="addressspace\OPCDerivations.h" />
+    <ClInclude Include="cjson\cJSON.h" />
+    <ClInclude Include="Definitions\id_opcua.h" />
+    <ClInclude Include="Definitions\id_opcua_addressspace.h" />
+    <ClInclude Include="Definitions\id_opcua_addressspace_functions.h" />
+    <ClInclude Include="Definitions\id_opcua_addressspace_ids.h" />
+    <ClInclude Include="Definitions\id_opcua_comm.h" />
+    <ClInclude Include="Definitions\id_opcua_db_def.h" />
+    <ClInclude Include="Definitions\id_opcua_db_private.h" />
+    <ClInclude Include="Definitions\id_opcua_serverinfo.h" />
+    <ClInclude Include="functions\ExposedFunctions.h" />
+    <ClInclude Include="functions\UASQLFunctions.h" />
+    <ClInclude Include="Functions\UASQLInternal.h" />
+    <ClInclude Include="indexer\Aliaser.h" />
+    <ClInclude Include="indexer\Continuer.h" />
+    <ClInclude Include="indexer\Indexer.h" />
+    <ClInclude Include="sessionmanager\SecurityManager.h" />
+    <ClInclude Include="sessionmanager\SessionManager.h" />
+    <ClInclude Include="uaspace\Initialize.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

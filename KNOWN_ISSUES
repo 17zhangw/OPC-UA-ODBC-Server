@@ -1,0 +1,17 @@
+Working constraints of the current implementation:
+
++)  ExtensionObject - may need to initialize one dimension array with a dummy element
++)  ValueRank Any or 2D are not currently supported
++)  Changing the datatype of a Variable between primitives is not currently supported 
+        possibly, in the future, will completely reset the target variant on Write() 
+        and reinitialize the Variant with target value
++)  NodeIds are not supported on a greater ServerIndex
++)  Types must be statically created within the OPC Foundation's EncodeableObject system
++)  Currently only SINGLE locale supported
++)  Organizes Reference only copied IF THE TYPES MATCH
++) Browse() View Maintenance REQUIRES 1 level matching & lacks View versioning
++) NodeIds numeric are guaranteed to work, other NodeId types uncertain
+
++) ValueAsText property is created...but not yet finished evaluating the valueastext dynamically
++) Indexer() will overroll at UInt32 Max...
++) Session Diagnostics information not created properly (requires mutex) (although don't have to create if Diagnostics TURNED OFF

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>AddressSpace/AddressSpace.h</itemPath>
+      <itemPath>AddressSpace/AddressSpaceCopier.h</itemPath>
+      <itemPath>AddressSpace/AddressSpaceHelper.h</itemPath>
+      <itemPath>Indexer/Aliaser.h</itemPath>
+      <itemPath>Indexer/Continuer.h</itemPath>
+      <itemPath>Functions/ExposedFunctions.h</itemPath>
+      <itemPath>Indexer/Indexer.h</itemPath>
+      <itemPath>UASpace/Initialize.h</itemPath>
+      <itemPath>AddressSpace/OPCDerivations.h</itemPath>
+      <itemPath>AddressSpace/OPCIdentifiers.h</itemPath>
+      <itemPath>SessionManager/SecurityManager.h</itemPath>
+      <itemPath>SessionManager/SessionManager.h</itemPath>
+      <itemPath>Functions/UASQLFunctions.h</itemPath>
+      <itemPath>Functions/UASQLInternal.h</itemPath>
+      <itemPath>cJSON/cJSON.h</itemPath>
+      <itemPath>Definitions/id_opcua.h</itemPath>
+      <itemPath>Definitions/id_opcua_addressspace.h</itemPath>
+      <itemPath>Definitions/id_opcua_addressspace_functions.h</itemPath>
+      <itemPath>Definitions/id_opcua_addressspace_ids.h</itemPath>
+      <itemPath>Definitions/id_opcua_comm.h</itemPath>
+      <itemPath>Definitions/id_opcua_db_def.h</itemPath>
+      <itemPath>Definitions/id_opcua_db_private.h</itemPath>
+      <itemPath>Definitions/id_opcua_serverinfo.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>Functions/Access.c</itemPath>
+      <itemPath>AddressSpace/AddressSpace.c</itemPath>
+      <itemPath>AddressSpace/AddressSpaceCopier.c</itemPath>
+      <itemPath>AddressSpace/AddressSpaceHelper.c</itemPath>
+      <itemPath>Indexer/Aliaser.c</itemPath>
+      <itemPath>UASpace/Base64.c</itemPath>
+      <itemPath>Indexer/Continuer.c</itemPath>
+      <itemPath>Functions/Discovery.c</itemPath>
+      <itemPath>Functions/EXECUTE_SQLVariant.c</itemPath>
+      <itemPath>Functions/ExposedFunctions.c</itemPath>
+      <itemPath>Functions/IUD_SQLVariant.c</itemPath>
+      <itemPath>Indexer/Indexer.c</itemPath>
+      <itemPath>UASpace/Initialize.c</itemPath>
+      <itemPath>UASpace/InitializeCustom.c</itemPath>
+      <itemPath>UASpace/InitializeObjectTypes.c</itemPath>
+      <itemPath>UASpace/InitializeObjects.c</itemPath>
+      <itemPath>UASpace/InitializeOtherTypes.c</itemPath>
+      <itemPath>UASpace/InitializeTest.c</itemPath>
+      <itemPath>AddressSpace/OPCDerivations.c</itemPath>
+      <itemPath>Functions/QUERY_SQLVariant.c</itemPath>
+      <itemPath>Functions/RegisterUnregisterNodes.c</itemPath>
+      <itemPath>SessionManager/SecurityManager.c</itemPath>
+      <itemPath>Functions/Session.c</itemPath>
+      <itemPath>SessionManager/SessionManager.c</itemPath>
+      <itemPath>Functions/UASQLFunctions.c</itemPath>
+      <itemPath>Functions/UASQLInternal.c</itemPath>
+      <itemPath>Functions/UnimplementedFunctions.c</itemPath>
+      <itemPath>cJSON/cJSON.c</itemPath>
+      <itemPath>main.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <itemPath>KNOWN_ISSUES</itemPath>
+    <itemPath>NOTICES</itemPath>
+    <itemPath>SampleTest</itemPath>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>Definitions</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <standard>10</standard>
+          <commandLine>-pthread -g</commandLine>
+        </cTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>uastack</linkerLibLibItem>
+            <linkerLibLibItem>ssl</linkerLibLibItem>
+            <linkerLibLibItem>crypto</linkerLibLibItem>
+            <linkerLibLibItem>dl</linkerLibLibItem>
+            <linkerLibLibItem>odbc</linkerLibLibItem>
+            <linkerLibLibItem>m</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="AddressSpace/AddressSpace.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="AddressSpace/AddressSpace.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AddressSpace/AddressSpaceCopier.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="AddressSpace/AddressSpaceCopier.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AddressSpace/AddressSpaceHelper.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="AddressSpace/AddressSpaceHelper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AddressSpace/OPCDerivations.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="AddressSpace/OPCDerivations.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AddressSpace/OPCIdentifiers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua_addressspace.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua_addressspace_functions.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua_addressspace_ids.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua_comm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua_db_def.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua_db_private.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua_serverinfo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Functions/Access.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/Discovery.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/EXECUTE_SQLVariant.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/ExposedFunctions.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/ExposedFunctions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Functions/IUD_SQLVariant.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/QUERY_SQLVariant.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/RegisterUnregisterNodes.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Functions/Session.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/UASQLFunctions.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/UASQLFunctions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Functions/UASQLInternal.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/UASQLInternal.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Functions/UnimplementedFunctions.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Indexer/Aliaser.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Indexer/Aliaser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Indexer/Continuer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Indexer/Continuer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Indexer/Indexer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Indexer/Indexer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="KNOWN_ISSUES" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="NOTICES" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SampleTest" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SessionManager/SecurityManager.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="SessionManager/SecurityManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SessionManager/SessionManager.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="SessionManager/SessionManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="UASpace/Base64.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="UASpace/Initialize.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="UASpace/Initialize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="UASpace/InitializeCustom.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="UASpace/InitializeObjectTypes.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="UASpace/InitializeObjects.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="UASpace/InitializeOtherTypes.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="UASpace/InitializeTest.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="cJSON/cJSON.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="cJSON/cJSON.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+          <standard>10</standard>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="AddressSpace/AddressSpace.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="AddressSpace/AddressSpace.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AddressSpace/AddressSpaceCopier.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="AddressSpace/AddressSpaceCopier.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AddressSpace/AddressSpaceHelper.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="AddressSpace/AddressSpaceHelper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AddressSpace/OPCDerivations.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="AddressSpace/OPCDerivations.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AddressSpace/OPCIdentifiers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua_addressspace.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua_addressspace_functions.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua_addressspace_ids.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua_comm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua_db_def.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua_db_private.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Definitions/id_opcua_serverinfo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Functions/Access.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/Discovery.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/EXECUTE_SQLVariant.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/ExposedFunctions.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/ExposedFunctions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Functions/IUD_SQLVariant.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/QUERY_SQLVariant.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/RegisterUnregisterNodes.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Functions/Session.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/UASQLFunctions.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/UASQLFunctions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Functions/UASQLInternal.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Functions/UASQLInternal.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Functions/UnimplementedFunctions.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Indexer/Aliaser.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Indexer/Aliaser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Indexer/Continuer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Indexer/Continuer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Indexer/Indexer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Indexer/Indexer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="KNOWN_ISSUES" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="NOTICES" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SampleTest" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SessionManager/SecurityManager.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="SessionManager/SecurityManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SessionManager/SessionManager.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="SessionManager/SessionManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="UASpace/Base64.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="UASpace/Initialize.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="UASpace/Initialize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="UASpace/InitializeCustom.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="UASpace/InitializeObjectTypes.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="UASpace/InitializeObjects.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="UASpace/InitializeOtherTypes.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="UASpace/InitializeTest.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="cJSON/cJSON.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="cJSON/cJSON.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

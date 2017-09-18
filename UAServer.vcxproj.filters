@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addressspace\AddressSpace.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addressspace\AddressSpaceCopier.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addressspace\AddressSpaceHelper.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addressspace\OPCDerivations.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cjson\cJSON.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="functions\Access.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="functions\Discovery.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="functions\ExposedFunctions.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="functions\RegisterUnregisterNodes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="functions\Session.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="functions\UASQLFunctions.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="functions\UnimplementedFunctions.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="indexer\Aliaser.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="indexer\Continuer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="indexer\Indexer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nbproject\private\cpp_standard_headers_indexer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nbproject\private\c_standard_headers_indexer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sessionmanager\SecurityManager.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sessionmanager\SessionManager.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uaspace\Base64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uaspace\Initialize.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uaspace\InitializeCustom.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uaspace\InitializeObjects.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uaspace\InitializeObjectTypes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uaspace\InitializeOtherTypes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uaspace\InitializeTest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions\UASQLInternal.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_win32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions\QUERY_SQLVariant.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions\EXECUTE_SQLVariant.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions\DML_SQLVariant.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".dep.inc">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="addressspace\AddressSpace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="addressspace\AddressSpaceCopier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="addressspace\AddressSpaceHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="addressspace\OPCDerivations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cjson\cJSON.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="functions\ExposedFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="functions\UASQLFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="indexer\Aliaser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="indexer\Continuer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="indexer\Indexer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sessionmanager\SecurityManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sessionmanager\SessionManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uaspace\Initialize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Functions\UASQLInternal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Definitions\id_opcua.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Definitions\id_opcua_comm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Definitions\id_opcua_addressspace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Definitions\id_opcua_db_def.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Definitions\id_opcua_db_private.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Definitions\id_opcua_addressspace_ids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Definitions\id_opcua_addressspace_functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Definitions\id_opcua_serverinfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

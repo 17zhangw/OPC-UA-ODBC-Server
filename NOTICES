@@ -1,0 +1,54 @@
+Conformance Test:
+Security -> UaPkiCertificate.publicKeyFromDER() varies from test to test (CreateSession.js)
+Security -> UaPkiCertificate.publicKeyFromDER() error (identity.js) in buildUserNameIdentityToken
+
+Discovery Get Endpoints -> No Issue
+
+Discovery Find Servers Self -> No Issue
+
+Address Space Base ->
+1)  Address Space scanning based on pulling first reference and following that.
+    However, the server has at least 2+ cyclic components.
+    -   PropertyType (VariableType) via HasProperty to NodeVersion
+        NodeVersion via HasTypeDefinition to PropertyType
+        * This cyclic has been patched to not attach NodeVersion to PropertyType
+    -   Mandatory (ModellingRuleType) via HasProperty to NodeVersion
+        NodeVersion via HasModellingRule to Mandatory
+        * This is caused by force inheritance of NodeVersion between Types
+        * Can be solved by changing NodeVersion to be Optional
+2)  Altered 002.js test to account for the HasEncoding reference on DataTypes
+
+Address Space Write Mask
+1)  Documentation and implementation differs (scalar as OPPOSED TO ARRAY)
+
+Base Info Core Structure -> No Issue
+
+View Basic
+1)  005.js, 016.js, 020.js test case - does not account for the fact that Browse() can return other ReferenceTypes
+2)  015.js basically passed the test, just got a warning on the logging check
+3)  015.js - requires the parent's type Reference to exist for the test to completely succeed
+4)  019.js - incomplete test with NodeIdSettings.References not defined
+
+View TranslateBrowsePath
+1)  Err-002.js - reduce max browse depth
+2)  Err-024.js - comparison against 1600 will always fail time evaluation
+
+View Minimum Continuation Point 1
+1)  011.js - reference subtype bullshit issue
+2)  Err-010 - comparison against time 1600-01-01 will always fail
+3)  015.js - server does not have two views
+4)  012.js - Method ns=1;i=1001 does not have 2+ method references
+    012.js - View lacks current switch statement and executing with NodeClassMask equal to 12
+
+View Register Nodes
+1)  Err-009 & Err-014 - comparison against time 1600-01-01 will always fail
+2)  013.js, 014.js, 015.js - do not have sufficient nodeIds so tests were skipped
+
+Method
+1)  break loop in calculating the parent node is not evaluated properly
+
+Attribute Write Values
+1)  LocalizedText has no minValue but still error!
+
+Security User Anonymous
+1)  002.js - require findAnonymous intiial setting to null
